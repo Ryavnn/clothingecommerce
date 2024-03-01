@@ -65,28 +65,28 @@ def get_one_product(id):
         return jsonify({'message':'Product does not exist❗'})
     
 # @auth.login_required
-@products_bp.route('/add-product', methods = ['POST'])
 
+@products_bp.route('/add-product', methods=['POST'])
 # @jwt_required
 def add_a_product():
-    
-    data= request.form
-    if data:
-        name =data['name']
-        price =data['price']
-        description =data['description']
-        category =data['category']
-        size =data['size']
-        imageUrl =data['imageUrl']
-        
-        new_product=Product(name=name,price=price,description=description,category=category,size=size,imageUrl=imageUrl)
-        
+    data = request.get_json()
+
+    if data and all(key in data for key in ['name', 'price', 'description', 'category', 'size', 'imageUrl']):
+        new_product = Product(
+            name=data['name'],
+            price=data['price'],
+            description=data['description'],
+            category=data['category'],
+            size=data['size'],
+            imageUrl=data['imageUrl']
+        )
+
         db.session.add(new_product)
         db.session.commit()
-        return jsonify({'message':'Product created succsesfully😉'})
-        
+        return jsonify({'message': 'Product created successfully😉'})
     else:
-        return jsonify({'error':'Enter product information❗'})
+        return jsonify({'error': 'Enter all product information❗'}), 400
+
 
 
 @products_bp.route('/products/<int:id>',methods=["PUT",'DELETE','PATCH'])

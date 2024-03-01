@@ -86,11 +86,11 @@ def checkout():
 
     if cart:
         cart.products = []
-        cart.total_price = 0\
+        cart.total_price = 0
 
         db.session.commit()
 
-        return jsonify({'message': 'Checkout successful'}), 200
+        return jsonify({'message': 'Checkout successful'}), 204
     else:
         return jsonify({'error': 'Cart not found'}), 404
 
