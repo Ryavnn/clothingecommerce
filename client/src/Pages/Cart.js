@@ -3,6 +3,7 @@ import data from "../data";
 import { shopContext } from "../context";
 import CartItems from "../components/CartItem";
 
+
 function Cart(){
   const {cartItems} = useContext(shopContext);
 
@@ -16,6 +17,8 @@ function Cart(){
           data.map((item) =>{
             if (cartItems[item.id] !== 0 ){
               return(<CartItems  data={item}/>)
+            }else{
+              console.log("not in the cart");
             }
           })
         }
