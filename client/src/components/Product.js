@@ -3,7 +3,7 @@ import { shopContext } from "../context";
 
 function Product(props){
     const {id, productName, price, productImage} = props.data
-    const {addToCart,} = useContext(shopContext);
+    const {addToCart} = useContext(shopContext);
     return(
         <div className="product">
         <img src={productImage} alt="" />

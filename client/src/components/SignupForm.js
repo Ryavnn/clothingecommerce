@@ -2,8 +2,6 @@ import React, { useContext, useState } from "react";
 
 
 import { useNavigate } from "react-router-dom";
-import Navbar from "../layout/Navbar";
-import Footer from "../layout/Footer";
 import "../App.css";
 import { AuthContext } from "../context/AuthContext";
 
@@ -43,7 +41,6 @@ const SignupForm = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="signup-form-container" style={{ height: "100vh", marginTop: "35px" }}>
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>

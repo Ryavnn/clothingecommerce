@@ -4,8 +4,6 @@ import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import "./Landing.css";
 
-import data from "./data"
-import Product from "./components/Product";
 
 const Landing = () => {
   const [backgroundImages, setBackgroundImages] = useState([
@@ -44,11 +42,6 @@ const Landing = () => {
           <p>Discover a world of amazing products at your fingertips</p>
         </div>
       </div>
-      <div className="container">
-        {data.map((item) => (
-          <Product data={item}/>  
-        ))}
-        </div>
         <Footer />
     </>
   );

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { shopContext } from "../context";
 import Navbar from "../layout/Navbar";
-import "../layout/"
 
 function CartItems(props) {
   const { id, productName, price, productImage } = props.data;
