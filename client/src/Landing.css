@@ -27,7 +27,67 @@
   left: 0;
   animation: fadeInOut 10s linear infinite; /* Adjust the animation duration as needed */
 }
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.product {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+h4 {
+  color: #333;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+p {
+  color: #777;
+  font-size: 0.9em;
+}
+
+.price {
+  display: block;
+  color: #e44d26;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.add-cart {
+  background-color: #e44d26;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .product {
+    width: 100%;
+  }
+}
 @keyframes fadeInOut {
   0%, 100% {
     opacity: 0; /* Fade out at the start and end of the animation */
